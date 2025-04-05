@@ -11,7 +11,17 @@
             }
         },
         "main": {
-            "text": "Привет я запущен на [TTA](https://github.com/falpin/TelegramTextApp)"
+            "width":5,
+            "text": "Выберите настроение, которое хотите добавить",
+            "function":"registration",
+            "buttons":"moods"
+        },
+
+        "mood":{
+            "loading":"Загрузка",
+            "text":"*{data}*\n\nВыберите __топик__ и/или введите причину такого настроения",
+            "buttons":"topics",
+            "return":"main"
         }
     },
     "commands": {
@@ -20,7 +30,7 @@
             "text": "Перезапуск бота"
         }
     },
-    "general_buttons": {
+    "var_buttons": {
         "return": "‹ Назад",
         "admin": {
             "text": "Администратор",
