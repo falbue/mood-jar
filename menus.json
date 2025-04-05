@@ -1,0 +1,31 @@
+{
+    "menus": {
+        "error": {
+            "text": "Это меню ещё не создано",
+            "return": "main"
+        },
+        "error_command": {
+            "text": "Команда не найдена",
+            "buttons": {
+                "return": "main"
+            }
+        },
+        "main": {
+            "text": "Привет я запущен на [TTA](https://github.com/falpin/TelegramTextApp)"
+        }
+    },
+    "commands": {
+        "start": {
+            "menu": "main",
+            "text": "Перезапуск бота"
+        }
+    },
+    "general_buttons": {
+        "return": "‹ Назад",
+        "admin": {
+            "text": "Администратор",
+            "role": "admin"
+        },
+        "notification": "Прочитано"
+    }
+}
