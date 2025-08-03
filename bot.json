@@ -1,0 +1,50 @@
+{
+	"bot":{
+		"name":"Баночка настроения",
+		"short_description":"На свой страх и риск",
+		"description":"Бот на стадии альфа теста\n\nПо всем вопросам @falbue"
+	},
+
+	"menu":{
+		"none_menu":{
+			"loading":true,
+			"text":"Меню `{menu_name}` не найдено",
+			"return":"main"
+		},
+
+		"tta_loading_menu":{
+			"text":"Загрузка..."
+		},
+
+		"main":{
+			"row":8,
+			"text":"Выберите Ваше текущее настроение",
+			"keyboard":"moods"
+		},
+
+		"mood|{mood}":{
+			"row":3,
+			"text":"Введите причину настроения __{mood}__\n\nТак же можно выбрать *топики*",
+			"keyboard":{
+				"function":"topics",
+				"return":"\\{return}",
+				"add_mood":"Добавить"
+			},
+			"return":"main"
+		}
+		
+	},
+
+
+	"buttons":{
+		"return":"‹ Назад"
+	},
+
+
+	"commands":{
+		"start":{
+			"description":"🔄 Перезапуск бота",
+			"menu":"main"
+		}
+	}
+}
