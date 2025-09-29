@@ -12,32 +12,34 @@
 			"return":"main"
 		},
 
-		"tta_loading_menu":{
-			"text":"Загрузка..."
-		},
-
 		"main":{
 			"row":8,
 			"text":"Выберите Ваше текущее настроение",
 			"keyboard":"moods"
 		},
 
-		"mood|{mood}":{
+		"mood|{mood}|{topic}":{
 			"row":3,
-			"text":"Введите причину настроения __{mood}__\n\nТак же можно выбрать *топики*",
+			"text":"Введите причину настроения __{mood}__\n\n*Топики:* {select_topics}\n\nТак же можно выбрать *топики*",
+			"function":"select_topic",
+			"input":{
+                "data":"in_mood",
+                "menu":"mood|{mood}|{topic}",
+                "function":"multi_generator"
+            },
 			"keyboard":{
 				"function":"topics",
-				"return":"\\{return}",
-				"add_mood":"Добавить"
-			},
-			"return":"main"
+				"return|main":"\\‹ Назад",
+				"main|":"Добавить"
+			}
 		}
 		
 	},
 
 
-	"buttons":{
-		"return":"‹ Назад"
+	"variables":{
+		"tta_return":"‹ Назад",
+		"tta_loading":"Загрузка..."
 	},
 
 
