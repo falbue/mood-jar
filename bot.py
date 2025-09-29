@@ -1,16 +1,7 @@
 import json
-from TelegramTextApp.database import SQL_request
+from TelegramTextApp.utils.database import SQL_request
 import TelegramTextApp
-import os
-from dotenv import load_dotenv
 import ast
-
-if __name__ == "__main__":
-    load_dotenv()
-    TOKEN = os.getenv("BOT_TOKEN")
-    DATABASE = os.getenv("DATABASE")
-    DEBUG = os.getenv("DEBUG", "false").lower() in ("true", "1", "yes")
-    TelegramTextApp.start(TOKEN, "bot.json", DATABASE, debug=DEBUG)
 
 def create_users():
     # Пользователи
@@ -40,7 +31,7 @@ def moods(tta_data):
         moods = moods.get('moods')
     keyboard = {}
     for mood, emoji in moods.items():
-        keyboard[f"mood|{mood}"] = emoji
+        keyboard[f"mood|{mood}|none"] = emoji
     return keyboard
 
 def topics(tta_data):
@@ -57,3 +48,11 @@ def topics(tta_data):
     for topic in topics_data:
         keyboard[f"mood|{mood}|{topic}"] = topic
     return keyboard
+
+def select_topic(tta_data):
+    print(tta_data)
+    return {"select_topics": tta_data["topic"]}
+
+
+if __name__ == "__main__":
+    TelegramTextApp.start()
